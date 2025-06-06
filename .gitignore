@@ -1,0 +1,7 @@
+# Credentials
+backend/credentials.json
+
+# Andere gevoelige bestanden
+.env
+*.log
+EOF

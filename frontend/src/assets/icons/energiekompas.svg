@@ -1,0 +1,380 @@
+
+<svg id="energiekompas" data-name="energiekompas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532.22 600">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-linecap: round;
+        stroke-width: 1.5px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-16 {
+        fill: none;
+        stroke: #002f73;
+      }
+
+      .cls-17 {
+        letter-spacing: .03em;
+      }
+
+      .cls-18 {
+        letter-spacing: .02em;
+      }
+
+      .cls-19 {
+        letter-spacing: .04em;
+      }
+
+      .cls-20, .cls-21 {
+        letter-spacing: .04em;
+      }
+
+      .cls-22 {
+        letter-spacing: .04em;
+      }
+
+      .cls-23 {
+        font-size: 14px;
+      }
+
+      .cls-23, .cls-24, .cls-25, .cls-26, .cls-21, .cls-27, .cls-28, .cls-29, .cls-30 {
+        font-family: Quicksand-SemiBold, Quicksand;
+        font-weight: 600;
+      }
+
+      .cls-29 {
+        font-size: 50px;
+      }
+
+      .cls-23, .cls-25, .cls-15, .cls-29 {
+        fill: #002f73;
+      }
+
+      .cls-31 {
+        letter-spacing: .02em;
+      }
+
+      .cls-24 {
+        letter-spacing: .06em;
+      }
+
+      .cls-24, .cls-26, .cls-21, .cls-27, .cls-28, .cls-30 {
+        fill: #fff;
+      }
+
+      .cls-24, .cls-26, .cls-21, .cls-29, .cls-30 {
+        font-size: 8px;
+      }
+
+      .cls-25 {
+        font-size: 10px;
+      }
+
+      .cls-26 {
+        letter-spacing: .04em;
+      }
+
+      .cls-32 {
+        letter-spacing: .04em;
+      }
+
+      .cls-33 {
+        letter-spacing: .03em;
+      }
+
+      .cls-34 {
+        letter-spacing: .03em;
+      }
+
+      .cls-27 {
+        letter-spacing: .06em;
+      }
+
+      .cls-27, .cls-28 {
+        font-size: 19px;
+      }
+
+      .cls-28 {
+        letter-spacing: .06em;
+      }
+
+      .cls-2 {
+        fill: #d90000;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15 {
+        stroke: #fff;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        fill: #a6c92b;
+      }
+
+      .cls-4 {
+        fill: #e51c20;
+      }
+
+      .cls-5 {
+        fill: #b21d9c;
+      }
+
+      .cls-6 {
+        fill: #b21d45;
+      }
+
+      .cls-7 {
+        fill: #431d9c;
+      }
+
+      .cls-8 {
+        fill: #53b039;
+      }
+
+      .cls-9 {
+        fill: #821d9c;
+      }
+
+      .cls-10 {
+        fill: #ff0303;
+      }
+
+      .cls-11 {
+        fill: #eb5d19;
+      }
+
+      .cls-12 {
+        fill: #f6a210;
+      }
+
+      .cls-13 {
+        fill: #fce510;
+      }
+
+      .cls-14 {
+        fill: #029246;
+      }
+
+      .cls-35 {
+        letter-spacing: .02em;
+      }
+
+      .cls-36 {
+        letter-spacing: .02em;
+      }
+
+      .cls-16 {
+        stroke-width: .5px;
+        stroke-dasharray: 5;
+        stroke: #7E8EBF;
+      }
+
+      .st0{fill:#FF0303;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st1{fill:#FFFFFF;}
+      .st2{font-family:'Quicksand-SemiBold';}
+      .st3{font-size:8px;}
+      .st4{fill:none;stroke:#ABBAD1;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:1,1,1;}
+      .st5{fill:#D90000;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st6{fill:#B21D45;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st7{fill:#B21D9C;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st8{fill:#821D9C;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st9{fill:#431D9C;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st10{fill:#002F73;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st11{fill:none;stroke:#002F73;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:10;}
+      .st12{fill:#E51C20;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st13{font-size:19px;}
+      .st14{fill:#EB5D19;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st15{fill:#F6A210;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st16{fill:#FCE510;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st17{fill:#A6C92B;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st18{fill:#53B039;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st19{fill:#029246;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+      .st20{fill:#002F73;}
+      .st21{font-size:10px;}
+      .st22{fill:url(#SVGID_00000154403397497346386280000012347986583191665317_);}
+      .st23{fill:#002E73;}
+      .st24{fill:#D90000;}
+    </style>
+  </defs>
+    
+<g transform="translate(0, 0)">
+    <!-- Group starting the logo -->
+    <g transform="scale(3.5) translate(-50, 0)">
+    <g>
+      
+      
+      <g>
+
+          <linearGradient id="SVGID_00000141444662298927259460000006268024033312976820_" gradientUnits="userSpaceOnUse" x1="65.6417" y1="439.9351" x2="85.9101" y2="451.6371" gradientTransform="matrix(1 0 0 -1 0 460)">
+          <stop offset="0" style="stop-color:#B21D9C"></stop>
+          <stop offset="1" style="stop-color:#D90000"></stop>
+        </linearGradient>
+        <path id="SVGID_1_" style="fill:url(#SVGID_00000141444662298927259460000006268024033312976820_);" d="M75.8,2.5
+          c-0.5,0-0.9,0.1-1.3,0.3l-8,4.6c-0.7,0.4-1.3,1.4-1.3,2.2v9.2c0,0.8,0.6,1.8,1.3,2.2l8,4.6c0.7,0.4,1.9,0.4,2.6,0l8-4.6
+          c0.7-0.4,1.3-1.4,1.3-2.2V9.6c0-0.8-0.6-1.8-1.3-2.2l-8-4.6C76.7,2.6,76.2,2.5,75.8,2.5L75.8,2.5z"></path>
+      </g>
+    </g>
+    <g>
+      <path class="st1" d="M70.5,20c-0.1,0-0.3-0.1-0.4-0.2c-0.2-0.2-0.2-0.4-0.1-0.6l3-7.5l0,0c0-0.1,0.1-0.1,0.1-0.2
+        c0.1-0.1,0.1-0.1,0.2-0.1l7.5-3c0.2-0.1,0.4,0,0.6,0.1c0.2,0.2,0.2,0.4,0.1,0.6l-3,7.5l0,0c0,0.1-0.1,0.1-0.1,0.2
+        c-0.1,0.1-0.1,0.1-0.2,0.1l-7.5,3C70.6,20,70.6,20,70.5,20z M73.9,12.3l-2.4,6.1l6.1-2.4L80,9.9L73.9,12.3z"></path>
+      <path class="st23" d="M76.4,14.2c0-0.3-0.3-0.6-0.6-0.6c-0.3,0-0.6,0.3-0.6,0.6s0.3,0.6,0.6,0.6S76.4,14.5,76.4,14.2"></path>
+      <path class="st24" d="M100.9,7.7h2.3c0.2,0,0.4-0.2,0.4-0.4c0-0.3-0.2-0.5-0.4-0.5h-2.3V5.5h2.7c0.2,0,0.4-0.2,0.4-0.4
+        c0-0.3-0.2-0.5-0.4-0.5h-3.2c-0.3,0-0.5,0.2-0.5,0.5v4.4c0,0.3,0.2,0.5,0.5,0.5h3.2c0.2,0,0.4-0.2,0.4-0.5s-0.2-0.4-0.4-0.4h-2.7
+        V7.7z M95.5,5c-0.1-0.2-0.2-0.5-0.6-0.5S94.4,4.7,94.3,5l-1.2,3.8L92,5c-0.1-0.3-0.3-0.4-0.5-0.4c-0.3,0-0.5,0.3-0.5,0.5
+        c0,0.1,0,0.2,0.1,0.4l1.4,4.2c0.1,0.3,0.3,0.5,0.7,0.5c0.4,0,0.6-0.2,0.7-0.5l1-3.1l1,3.1c0.1,0.3,0.3,0.5,0.7,0.5
+        c0.5,0,0.6-0.2,0.7-0.5l1.4-4.2C98.9,5.3,99,5.1,99,5c0-0.3-0.2-0.5-0.5-0.5S98,4.7,98,4.9l-1.2,3.8L95.5,5z"></path>
+      <path class="st24" d="M105.9,5.7c0.3,0,0.6-0.3,0.6-0.6c0-0.3-0.3-0.6-0.6-0.6c-0.3,0-0.6,0.3-0.6,0.6
+        C105.3,5.4,105.5,5.7,105.9,5.7 M105.3,7.3v2.3c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5V7.3c0-0.3-0.2-0.5-0.5-0.5
+        S105.3,7,105.3,7.3"></path>
+      <path class="st24" d="M108.3,5.7c0.3,0,0.6-0.3,0.6-0.6c0-0.3-0.3-0.6-0.6-0.6c-0.3,0-0.6,0.3-0.6,0.6
+        C107.7,5.4,108,5.7,108.3,5.7 M107.8,7.3v2.3c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5V7.3c0-0.3-0.2-0.5-0.5-0.5S107.8,7,107.8,7.3
+        "></path>
+      <path class="st23" d="M181.8,17.2c0-0.6-1-0.8-2-0.8c-1.4,0-2.2,0.6-2.2,1.7c0,0.7,0.3,1.2,1,1.5c0.4,0.2,1,0.3,1.3,0.5
+        c0.4,0.2,0.7,0.4,0.7,0.8c0,0.5-0.4,0.7-1,0.7c-0.9,0-1.1-0.5-1.6-0.5c-0.3,0-0.5,0.2-0.5,0.5c0,0.8,1.4,1,2.2,1
+        c1.4,0,2.3-0.7,2.3-1.8c0-0.7-0.3-1.1-1.1-1.5c-0.4-0.2-0.9-0.3-1.3-0.5c-0.4-0.2-0.6-0.3-0.6-0.7c0-0.4,0.4-0.6,0.9-0.6
+        c0.6,0,1,0.3,1.4,0.3C181.6,17.8,181.8,17.5,181.8,17.2 M173.5,21.6c-0.6,0-1.2-0.3-1.2-0.8c0-0.7,1-0.9,2.4-1v1.5
+        C174.3,21.5,173.9,21.6,173.5,21.6 M171,20.8c0,1.2,1,1.8,2,1.8c0.6,0,1.1-0.1,1.7-0.4c0.1,0.2,0.3,0.4,0.6,0.4
+        c0.4,0,0.7-0.3,0.7-0.6v-3.3c0-0.8-0.2-1.2-0.5-1.6c-0.5-0.5-1.2-0.7-1.8-0.7s-1.2,0.1-1.7,0.3c-0.4,0.2-0.7,0.3-0.7,0.7
+        c0,0.3,0.2,0.5,0.5,0.5c0.2,0,0.3-0.1,0.6-0.2s0.7-0.2,1.1-0.2c0.4,0,0.7,0.1,0.9,0.3c0.2,0.2,0.2,0.5,0.2,0.9v0.2
+        c-0.8,0.1-1.8,0.2-2.5,0.5C171.5,19.5,171,20,171,20.8 M165,16.5c-0.5,0.1-0.8,0.3-0.8,0.9v7.5c0,0.4,0.3,0.6,0.7,0.6
+        s0.7-0.3,0.7-0.6v-2.5c0.4,0.1,0.7,0.2,1.1,0.2c0.8,0,1.8-0.3,2.4-0.9c0.4-0.5,0.7-1.2,0.7-2.1s-0.3-1.7-0.9-2.2
+        c-0.6-0.6-1.5-0.9-2.6-0.9C165.8,16.4,165.4,16.4,165,16.5 M165.5,17.6c0.3,0,0.6-0.1,0.9-0.1c0.6,0,1.1,0.2,1.5,0.6
+        c0.3,0.3,0.5,0.8,0.5,1.4c0,0.7-0.2,1.2-0.5,1.5c-0.4,0.4-0.9,0.5-1.4,0.5c-0.4,0-0.7-0.1-1-0.2V17.6z M153.2,17.1v4.8
+        c0,0.4,0.3,0.7,0.7,0.7s0.7-0.3,0.7-0.7v-2.4c0-0.6,0.1-1,0.3-1.4s0.6-0.6,1-0.6s0.7,0.1,0.9,0.4s0.3,0.7,0.3,1.2v2.8
+        c0,0.4,0.3,0.6,0.7,0.6s0.7-0.3,0.7-0.6v-2.5c0-0.6,0.1-1,0.3-1.4c0.2-0.3,0.6-0.5,1-0.5s0.7,0.1,0.9,0.4s0.3,0.7,0.3,1.2v2.8
+        c0,0.4,0.3,0.6,0.7,0.6s0.7-0.3,0.7-0.6v-3.1c0-0.9-0.2-1.4-0.6-1.8c-0.4-0.4-1-0.6-1.6-0.6c-0.4,0-0.8,0.1-1.2,0.3
+        c-0.4,0.2-0.6,0.5-0.8,0.8c-0.1-0.3-0.4-0.5-0.7-0.7c-0.4-0.2-0.8-0.3-1.2-0.3c-0.6,0-1.2,0.2-1.6,0.7l0,0c0-0.4-0.3-0.6-0.7-0.6
+        C153.5,16.4,153.2,16.7,153.2,17.1 M145.2,19.5c0,0.9,0.3,1.7,0.9,2.2c0.6,0.5,1.4,0.8,2.2,0.8c0.9,0,1.7-0.3,2.2-0.8
+        c0.6-0.5,0.9-1.3,0.9-2.2c0-0.9-0.3-1.7-0.9-2.2c-0.6-0.5-1.4-0.9-2.2-0.9c-0.9,0-1.7,0.3-2.2,0.9
+        C145.5,17.8,145.2,18.6,145.2,19.5 M146.5,19.5c0-0.6,0.2-1,0.5-1.4s0.8-0.6,1.3-0.6s1,0.2,1.3,0.6s0.5,0.8,0.5,1.4
+        s-0.2,1-0.5,1.4s-0.8,0.6-1.3,0.6s-1-0.2-1.3-0.6S146.5,20,146.5,19.5 M144,14.6c0.1-0.1,0.2-0.3,0.2-0.5c0-0.4-0.3-0.7-0.7-0.7
+        c-0.2,0-0.4,0.1-0.5,0.2l-3.7,3.8v-3.3c0-0.4-0.3-0.7-0.7-0.7s-0.7,0.3-0.7,0.7v7.7c0,0.4,0.3,0.7,0.7,0.7s0.7-0.3,0.7-0.7v-2.5
+        l0.9-0.9l2.9,3.8c0.2,0.2,0.4,0.3,0.6,0.3c0.4,0,0.7-0.4,0.7-0.7c0-0.1,0-0.3-0.1-0.4l-3.2-4L144,14.6z M131.8,18.9
+        c0-0.4,0.2-0.7,0.4-1c0.3-0.3,0.7-0.5,1.2-0.5s0.9,0.2,1.1,0.4c0.2,0.3,0.4,0.6,0.4,1h-3.1V18.9z M135.4,21
+        c-0.2,0-0.3,0.1-0.6,0.2s-0.7,0.3-1.2,0.3c-0.6,0-1.1-0.2-1.4-0.6c-0.2-0.3-0.4-0.6-0.4-1.1h3.7c0.4,0,0.7-0.3,0.7-0.7
+        c0-0.6-0.2-1.3-0.7-1.9c-0.5-0.5-1.2-0.8-2.1-0.8c-0.9,0-1.7,0.3-2.2,0.8s-0.8,1.3-0.8,2.2c0,0.9,0.3,1.7,0.8,2.2
+        c0.5,0.6,1.4,0.9,2.3,0.9c0.6,0,1.3-0.1,1.8-0.4c0.4-0.2,0.6-0.4,0.6-0.7C135.9,21.3,135.7,21,135.4,21 M128,14.6
+        c0.4,0,0.8-0.3,0.8-0.8c0-0.4-0.3-0.8-0.8-0.8c-0.4,0-0.8,0.3-0.8,0.8C127.2,14.2,127.6,14.6,128,14.6 M127.4,17.1V22
+        c0,0.4,0.3,0.6,0.7,0.6c0.4,0,0.7-0.3,0.7-0.6v-4.9c0-0.4-0.3-0.6-0.7-0.6C127.7,16.4,127.4,16.7,127.4,17.1 M122.5,21.4
+        c-0.5,0-0.9-0.2-1.1-0.5c-0.3-0.4-0.4-0.9-0.4-1.5s0.1-1.1,0.4-1.4s0.6-0.5,1.1-0.5c0.7,0,1.1,0.3,1.4,0.5v3
+        C123.6,21.3,123.1,21.4,122.5,21.4 M120.1,24.3c0,0.9,1.6,1.2,2.4,1.2c0.9,0,1.5-0.2,2-0.7s0.8-1.2,0.8-2.2V17
+        c0-0.4-0.3-0.6-0.7-0.6c-0.3,0-0.6,0.2-0.6,0.5c-0.4-0.2-1-0.5-1.6-0.5c-0.9,0-1.5,0.3-2,0.8c-0.5,0.6-0.8,1.4-0.8,2.2
+        c0,0.9,0.3,1.7,0.8,2.3c0.5,0.5,1.1,0.8,1.9,0.8c0.6,0,1.1-0.1,1.6-0.5v0.8c0,0.5-0.1,0.8-0.4,1.1c-0.2,0.3-0.6,0.4-1.1,0.4
+        c-0.4,0-0.7-0.1-1.1-0.3c-0.4-0.2-0.4-0.4-0.8-0.4C120.3,23.7,120.1,24,120.1,24.3 M117.5,16.4c-0.7,0-1.2,0.3-1.5,0.8V17
+        c0-0.4-0.3-0.6-0.7-0.6c-0.4,0-0.7,0.3-0.7,0.6v4.9c0,0.4,0.3,0.6,0.7,0.6c0.4,0,0.7-0.3,0.7-0.6v-2.3c0-0.9,0.3-2,1.3-2
+        c0.6,0,0.8,0.3,1.2,0.3c0.3,0,0.6-0.2,0.6-0.6c0-0.3-0.2-0.5-0.4-0.7C118.3,16.5,117.9,16.4,117.5,16.4 M108.6,18.9
+        c0-0.4,0.2-0.7,0.4-1c0.3-0.3,0.7-0.5,1.2-0.5s0.9,0.2,1.1,0.4c0.2,0.3,0.4,0.6,0.4,1h-3.1V18.9z M112.2,21
+        c-0.2,0-0.3,0.1-0.6,0.2c-0.3,0.1-0.7,0.3-1.2,0.3c-0.6,0-1.1-0.2-1.4-0.6c-0.2-0.3-0.4-0.6-0.4-1.1h3.7c0.4,0,0.7-0.3,0.7-0.7
+        c0-0.6-0.2-1.3-0.7-1.9c-0.5-0.5-1.2-0.8-2.1-0.8s-1.7,0.3-2.2,0.8s-0.8,1.3-0.8,2.2c0,0.9,0.3,1.7,0.8,2.2
+        c0.5,0.6,1.4,0.9,2.3,0.9c0.6,0,1.3-0.1,1.8-0.4c0.4-0.2,0.6-0.4,0.6-0.7C112.7,21.3,112.5,21,112.2,21 M99.9,21.9
+        c0,0.4,0.3,0.6,0.7,0.6c0.4,0,0.7-0.3,0.7-0.6v-2.2c0-0.5,0.1-1,0.3-1.4c0.3-0.5,0.8-0.8,1.4-0.8c0.4,0,0.7,0.1,0.9,0.3
+        c0.3,0.3,0.4,0.8,0.4,1.3v2.7c0,0.4,0.3,0.6,0.7,0.6c0.4,0,0.7-0.3,0.7-0.6v-3c0-0.9-0.2-1.5-0.7-1.9c-0.4-0.4-1-0.6-1.7-0.6
+        c-0.8,0-1.5,0.3-1.9,0.9v-0.3c0-0.4-0.3-0.6-0.7-0.6c-0.4,0-0.7,0.3-0.7,0.6v5H99.9z M93.2,18.6h3.9c0.3,0,0.6-0.3,0.6-0.6
+        c0-0.4-0.3-0.6-0.6-0.6h-3.9v-2.5h4.6c0.4,0,0.6-0.3,0.6-0.6s-0.3-0.6-0.6-0.6h-5.3c-0.4,0-0.7,0.3-0.7,0.7v7.4
+        c0,0.4,0.3,0.7,0.7,0.7h5.3c0.4,0,0.6-0.3,0.6-0.6c0-0.3-0.3-0.6-0.6-0.6h-4.6V18.6z"></path>
+    </g>
+  </g>
+  
+
+  
+  <!-- Start making the graph -->
+
+  <g transform="translate(0, 125)">
+	
+  <rect class="cls-10" x="1.5" y="34.26" width="55.03" height="26.37" rx="5.84" ry="5.84"></rect>
+  <text class="cls-30" transform="translate(20.16 44.58)"><tspan class="cls-34" x="0" y="0">z</tspan><tspan class="cls-20" x="4.1" y="0">eer</tspan><tspan class="cls-20"><tspan x="-8.23" y="9.6">onzuinig</tspan></tspan></text>
+  <line class="cls-16" x1="532.17" y1="41.39" x2="64.96" y2="41.39"></line>
+
+  <rect class="cls-2" x="1.5" y="60.63" width="55.03" height="115.904" rx="5.84" ry="5.84"></rect>
+  <text class="cls-21" transform="translate(11.93 120.292)"><tspan x="0" y="0">onzuinig</tspan></text>
+  <line class="cls-16" x1="532.17" y1="60.88" x2="64.96" y2="60.88"></line>
+
+  <rect class="cls-6" x="1.5" y="175.994" width="55.03" height="72.44" rx="5.84" ry="5.84"></rect>
+  <text class="cls-30" transform="translate(7.42 215.007628567)"><tspan class="cls-36" x="0" y="0">gemiddeld</tspan></text>
+  <line class="cls-16" x1="532.17" y1="176.784" x2="64.96" y2="176.784"></line>
+
+  <rect class="cls-5" x="1.5" y="248.434" width="55.03" height="29.4109028535" rx="5.84" ry="5.84"></rect>
+  <text class="cls-21" transform="translate(17.06 265.389451427)"><tspan x="0" y="0">zuinig</tspan></text>
+  <line class="cls-16" x1="532.17" y1="249.224" x2="64.96" y2="249.224"></line>
+
+  <rect class="cls-9" x="1.5" y="277.41" width="55.03" height="20.5876319974" rx="5.84" ry="5.84"></rect>
+  <text class="cls-30" transform="translate(18.89 285.453815999)"><tspan class="cls-34" x="0" y="0">zeer </tspan><tspan class="cls-20"><tspan x="-1.81" y="9.6">zuinig</tspan></tspan></text>
+  <line class="cls-16" x1="532.17" y1="278.2" x2="64.96" y2="278.2"></line>
+
+  <rect class="cls-7" x="1.5" y="297.6932" width="55.03" height="52.9396251362" rx="5.84" ry="5.84"></rect>
+  <text class="cls-30" transform="translate(18.85 321.913012568 )"><tspan class="cls-32" x="0" y="0">Paris</tspan><tspan class="cls-20" x="-1.2" y="9.6">Proof</tspan></text>
+  <line class="cls-16" x1="532.17" y1="298.4832" x2="64.96" y2="298.4832"></line>
+
+  <rect class="cls-15" x="1.5" y="350.76" width="55.03" height="43.96" rx="5.84" ry="5.84"></rect>
+  <text class="cls-26" transform="translate(16.55 375.61)"><tspan x="0" y="0">WENG</tspan></text>
+  <line class="cls-16" x1="532.17" y1="350.64" x2="64.96" y2="350.64"></line>
+
+  <line class="cls-16" x1="532.17" y1="394.72" x2="64.96" y2="394.72"></line>
+
+  <line class="cls-1" x1="66.31" y1="223.1456" x2="531.47" y2="310.52"></line>
+
+  <g>
+    <rect class="cls-4" x="72.82" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-28" transform="translate(82.65 426.04)"><tspan x="0" y="0">G</tspan></text>
+  </g>
+  <g>
+    <rect class="cls-11" x="114.93" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-28" transform="translate(126.01 426.04)"><tspan x="0" y="0">F</tspan></text>
+  </g>
+  <g>
+    <rect class="cls-12" x="157.03" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-28" transform="translate(168.04 426.04)"><tspan x="0" y="0">E</tspan></text>
+  </g>
+  <g>
+    <rect class="cls-13" x="199.13" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-28" transform="translate(208.76 426.04)"><tspan x="0" y="0">D</tspan></text>
+  </g>
+  <g>
+    <rect class="cls-3" x="241.23" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-27" transform="translate(251.62 426.04)"><tspan x="0" y="0">C</tspan></text>
+  </g>
+  <g>
+    <rect class="cls-8" x="283.33" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-27" transform="translate(293.55 426.04)"><tspan x="0" y="0">B</tspan></text>
+  </g>
+  <g>
+    <rect class="cls-14" x="325.43" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-27" transform="translate(335.77 426.04)"><tspan x="0" y="0">A</tspan></text>
+  </g>
+  <g>
+    <!--<text class="cls-24" transform="translate(382.01 413.03)"><tspan x="0" y="0">+</tspan></text>-->
+    <rect class="cls-14" x="367.53" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-27" transform="translate(377.87 429.67)"><tspan x="0" y="0">A</tspan></text>
+    <text class="cls-24" transform="translate(382.01 413.03)"><tspan x="0" y="0">+</tspan></text>
+  </g>
+  <g>
+    <!--<text class="cls-24" transform="translate(421.57 413.03)"><tspan x="0" y="0">++</tspan></text>-->
+    <rect class="cls-14" x="409.63" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-27" transform="translate(419.97 429.67)"><tspan x="0" y="0">A</tspan></text>
+    <text class="cls-24" transform="translate(421.57 413.03)"><tspan x="0" y="0">++</tspan></text>
+  </g>
+  <g>
+    <!--<text class="cls-24" transform="translate(461.14 413.03)"><tspan x="0" y="0">+++</tspan></text>-->
+    <rect class="cls-14" x="451.73" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-27" transform="translate(462.07 429.67)"><tspan x="0" y="0">A</tspan></text>
+    <text class="cls-24" transform="translate(461.14 413.03)"><tspan x="0" y="0">+++</tspan></text>
+  </g>
+  <g>
+    <!--<text class="cls-24" transform="translate(500.53 413.03)"><tspan x="0" y="0">++++</tspan></text>-->
+    <rect class="cls-14" x="493.83" y="402.96" width="34.02" height="34.02" rx="5.84" ry="5.84"></rect>
+    <text class="cls-27" transform="translate(504.32 429.67)"><tspan x="0" y="0">A</tspan></text>
+    <text class="cls-24" transform="translate(500.53 413.03)"><tspan x="0" y="0">++++</tspan></text>
+  </g>
+
+  <text class="cls-25" transform="translate(268.5 455.76)"><tspan class="cls-19" x="0" y="0">Energielabel</tspan></text>
+
+  <!-- <line class="cls-1" x1="362.72" y1="41.39" x2="362.72" y2="394.72"/> -->
+  <circle cy="240.169" cx="384.54" fill="#b21d45" r="6"></circle>
+  <text class="cls-29" y="243.169" x="389.54" transform="scale(1.8) translate(-200,-120)">Verbruik 2024</text>
+  </g>
+  </g>
+</svg>
