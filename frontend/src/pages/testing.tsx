@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { ArrowUpRight, ArrowDownRight, Leaf } from 'lucide-react';
+import WeiiChartSvg from '../assets/icons/energiekompas.svg';
+import woerdenImage from '../assets/images/woerden.png';
+import tnLogoSvg from '../assets/icons/tn-logo.svg';
 
 // Interfaces
 interface EnergyDataPoint {
@@ -40,6 +43,7 @@ const extractYearsFromData = (data: any[]): string[] => {
 const WeiiChart = () => (
   <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded">
     <span className="text-gray-500">WEII Chart</span>
+    
   </div>
 );
 
@@ -383,8 +387,12 @@ const EnergyDashboard: React.FC = () => {
               </div>
               
               <div className="flex items-center flex-shrink-0">
-                <div className="text-green-800 font-bold p-2 flex items-center justify-center text-xl">
-                  <TvvlLogo style={{ width: '90px', height: 'auto' }} />
+                <div className="text-green-800 font-bold p-2 flex items-center justify-center">
+                  <img 
+                    src={tnLogoSvg} 
+                    alt="TN Logo" 
+                    className="h-12 w-auto object-contain"
+                  />
                 </div>
               </div>
             </div>
@@ -392,7 +400,16 @@ const EnergyDashboard: React.FC = () => {
             {/* Building image */}
             <div className="bg-white rounded-lg shadow overflow-hidden flex justify-center items-center h-64 lg:h-72">
               <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500">Building Image</span>
+                <img 
+                  src={woerdenImage}
+                  alt="Woerden kantoor" 
+                  className="object-contain"
+                  style={{ 
+                    transform: 'scale(1.2)',
+                    maxWidth: '100%',
+                    maxHeight: '100%'
+                  }}
+                />
               </div>
             </div>
             
@@ -422,7 +439,11 @@ const EnergyDashboard: React.FC = () => {
 
             {/* WEII chart */}
             <div className="bg-white rounded-lg shadow p-4 flex justify-center items-center h-64 lg:h-96">
-              <WeiiChart />
+             <img 
+                src={WeiiChartSvg} 
+                alt="WEII Energy Chart" 
+                className="w-full h-full object-contain"
+              />
             </div>
 
           </div>
