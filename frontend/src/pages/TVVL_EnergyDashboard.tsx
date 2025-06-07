@@ -54,7 +54,7 @@ const EnergyDashboard: React.FC = () => {
   // Functie om WEII data op te halen
   const fetchWeiiData = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/energy-data-weii'); // Pas de URL aan naar jouw API endpoint
+      const response = await fetch('https://grafana.viteco.tech/api/energy-data-weii'); // Pas de URL aan naar jouw API endpoint
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -107,7 +107,7 @@ const EnergyDashboard: React.FC = () => {
   useEffect(() => {
     const fetchElectricityData = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/energy-data-elec');
+        const response = await fetch('https://grafana.viteco.tech/api/energy-data-elec');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -165,7 +165,7 @@ const EnergyDashboard: React.FC = () => {
 
     const fetchGasData = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/energy-data-gas');
+        const response = await fetch('https://grafana.viteco.tech/api/energy-data-gas');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
