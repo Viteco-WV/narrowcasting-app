@@ -5,6 +5,7 @@ import RoomBookingSystem from './pages/TVVL_RoomBookingSystem';
 import EnvironmentalDashboard from './pages/TVVL_EnvironmentalDashboard';
 import TvvlEnergyDashboard from './pages/TVVL_EnergyDashboard';
 import TnEnergyDashboard from './pages/TN_EnergyDashboard';
+import TnEnergyDashboardV2 from './pages/TN_EnergyDashboard_v2';
 import './App.css';
 
 const App: React.FC = () => {
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <Route path="/tvvl-enviromental" element={<EnvironmentalDashboard />} />
           <Route path="/tvvl-energy" element={<TvvlEnergyDashboard />} />
           <Route path="/tn-energy" element={<TnEnergyDashboard />} />
+          <Route path="/tn-energy-v2" element={<TnEnergyDashboardV2 />} />
         </Routes>
       </div>
     </Router>
