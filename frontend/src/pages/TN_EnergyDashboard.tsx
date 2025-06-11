@@ -1,9 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { ArrowUpRight, ArrowDownRight, Leaf } from 'lucide-react';
-import { ReactComponent as WeiiChart } from '../assets/icons/energiekompas.svg';
-import { ReactComponent as TvvlLogo } from '../assets/icons/tn-logo.svg';
+import WeiiChart from '../assets/icons/energiekompas.svg';
+import TvvlLogo from '../assets/icons/tn-logo.svg';
 import woerdenImage from '../assets/images/woerden.png';
+
+// API Service voor betere error handling en cross-browser compatibility
+class ApiService {
+  private baseUrl: string;
+  
+  constructor() {
+    this.baseUrl = 'https://grafana.viteco.tech';
+  }
+  
+  async fetchWithRetry(endpoint: string, options: RequestInit = {}, retries: number = 3) {
+    for (let i = 0; i < retries; i++) {
+      try {
+        const response = await fetch(`${this.baseUrl}${endpoint}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            ...options.headers
+          },
+          credentials: 'same-origin',
+          mode: 'cors',
+          ...options
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        return await response.json();
+      } catch (error) {
+        console.error(`API call attempt ${i + 1} failed:`, error);
+        if (i === retries - 1) throw error;
+        // Exponential backoff
+        await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
+      }
+    }
+  }
+}
+
+const apiService = new ApiService();
 
 // Functie om de beschikbare jaren uit de data te extraheren
 const extractYearsFromData = (data: any[]): string[] => {
@@ -50,15 +89,49 @@ const EnergyDashboard: React.FC = () => {
   // State voor jaarlijkse totalen
   const [electricityTotals, setElectricityTotals] = useState<{[year: string]: number}>({});
   const [gasTotals, setGasTotals] = useState<{[year: string]: number}>({});
+  
+  // Mobile detection state
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  // CSS styles voor cross-browser compatibility
+  const containerStyle = {
+    backgroundColor: '#d3e6f8',
+    boxSizing: 'border-box' as const
+  };
+
+  const imageTransformStyle = {
+    transform: 'scale(1.2)',
+    WebkitTransform: 'scale(1.2)',
+    MozTransform: 'scale(1.2)',
+    msTransform: 'scale(1.2)',
+    maxWidth: '100%',
+    maxHeight: '100%'
+  };
+
+  const flexColumnStyle = {
+    flexShrink: 0,
+    WebkitFlexShrink: 0
+  };
+
+  // Mobile detection effect
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(
+        window.innerWidth <= 768 || 
+        /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      );
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Functie om WEII data op te halen
   const fetchWeiiData = async () => {
     try {
-      const response = await fetch('https://grafana.viteco.tech/api/energy-data-weii'); // Pas de URL aan naar jouw API endpoint
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const responseJson: WeiiResponse = await response.json();
+      const responseJson: WeiiResponse = await apiService.fetchWithRetry('/api/energy-data-weii');
       console.log('WEII data raw API response:', responseJson);
       
       if (!responseJson.dataWeii || !Array.isArray(responseJson.dataWeii)) {
@@ -107,11 +180,7 @@ const EnergyDashboard: React.FC = () => {
   useEffect(() => {
     const fetchElectricityData = async () => {
       try {
-        const response = await fetch('https://grafana.viteco.tech/api/energy-data-elec');
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const responseJson: any = await response.json();
+        const responseJson: any = await apiService.fetchWithRetry('/api/energy-data-elec');
         console.log('Elektriciteitsdata raw API response:', responseJson);
         
         // Check of de response een object is met een 'electricityData' property of een array
@@ -165,11 +234,7 @@ const EnergyDashboard: React.FC = () => {
 
     const fetchGasData = async () => {
       try {
-        const response = await fetch('https://grafana.viteco.tech/api/energy-data-gas');
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const responseJson: any = await response.json();
+        const responseJson: any = await apiService.fetchWithRetry('/api/energy-data-gas');
         console.log('Gasdata raw API response:', responseJson);
         
         // Check of de response een object is met een 'gasData' property of een array
@@ -284,7 +349,6 @@ const EnergyDashboard: React.FC = () => {
     }
   }, [loading, electricityData, gasData, availableYears]);
 
-
   if (loading) return (
     <div className="flex justify-center items-center h-screen">
       <div className="text-xl font-semibold">Data wordt geladen...</div>
@@ -292,17 +356,17 @@ const EnergyDashboard: React.FC = () => {
   );
 
   return (
-    <div className="p-6 font-sans text-gray-800" style={{ backgroundColor: '#d3e6f8' }}>
+    <div className="p-6 font-sans text-gray-800" style={containerStyle}>
       <div className="max-w-10xl mx-auto">
 
         {/* Consistent container for all content */}
         <div className="flex flex-col w-full">
 
           {/* Main content grid - maintaining the 1/4 to 3/4 split ratio */}
-          <div className="flex flex-wrap w-full mb-6">
+          <div className="flex flex-col lg:flex-row w-full mb-6 gap-4">
             
             {/* Left column - 1/4 width */}
-            <div className="w-1/5 p-4">
+            <div className="lg:w-1/5 p-4" style={flexColumnStyle}>
 
               <div className="bg-white rounded-lg shadow p-4 mb-6 flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -312,14 +376,18 @@ const EnergyDashboard: React.FC = () => {
                     </svg>
                   </div>
                   <div className="text-left">
-                    <div className="font-semibold text-sm">Korenmolenlaan 4</div>
+                    <div className="font-semibold text-sm">Korenmolenlaan 5</div>
                     <div className="text-sm text-gray-500">Woerden, NL</div>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
                   <div className="text-green-800 font-bold p-2 flex items-center justify-center text-xl">
-                    <TvvlLogo style={{ width: '90', height: 'auto' }} />
+                    <img 
+                      src={TvvlLogo} 
+                      alt="TVVL Logo" 
+                      style={{ width: '90px', height: 'auto' }} 
+                    />
                   </div>
                 </div>
               </div>
@@ -330,11 +398,7 @@ const EnergyDashboard: React.FC = () => {
                   src={woerdenImage}
                   alt="Woerden kantoor" 
                   className="object-contain"
-                  style={{ 
-                    transform: 'scale(1.2)',
-                    maxWidth: '100%',
-                    maxHeight: '100%'
-                  }}
+                  style={imageTransformStyle}
                 />
               </div>
               
@@ -366,17 +430,21 @@ const EnergyDashboard: React.FC = () => {
 
               {/* WEII chart */}
               <div className="bg-white rounded-lg shadow mb-6 p-4 flex justify-center items-center" style={{ height: "425px" }}>
-                <WeiiChart style={{ width: 'auto', height: 'auto' }} />
+                <img 
+                  src={WeiiChart} 
+                  alt="WEII Chart" 
+                  style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }} 
+                />
               </div>
 
             </div>
 
             {/* Right column - 3/4 width */}
-            <div className="w-4/5 p-4">
+            <div className="lg:w-4/5 p-4">
 
-            <div className="bg-white rounded-lg shadow p-4 mb-6 grid grid-cols-4 gap-4">
-            <div>
-                <div className="text-sm text-gray-600 mb-1">Energielabel</div>
+              <div className="bg-white rounded-lg shadow p-4 mb-6 grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div>
+                  <div className="text-sm text-gray-600 mb-1">Energielabel</div>
                   <div className="flex justify-center">
                     <div className="relative inline-flex">
                       {/* Main label with all corners rounded */}
@@ -404,7 +472,7 @@ const EnergyDashboard: React.FC = () => {
               </div>
 
               {/* Electricity usage cards */}
-              <div className="grid grid-cols-4 gap-4 mb-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 {availableYears.map((year, index) => (
                   <div key={year} className="bg-white rounded-lg shadow p-4 text-center">
                     <div className="text-sm text-gray-600">Elektra {year}</div>
@@ -443,51 +511,53 @@ const EnergyDashboard: React.FC = () => {
                   <div className="text-red-500">Geen jaartallen gedetecteerd in de data</div>
                 )}
                 
-                <ResponsiveContainer width="100%" height={220}>
-                  <BarChart 
-                    data={electricityData} 
-                    margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
-                    barGap={2}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                    <XAxis 
-                      dataKey="month" 
-                      tick={{ fontSize: 15 }}
-                      height={40}
-                    />
-                    <YAxis 
-                      axisLine={false}
-                      tickLine={false}
-                      ticks={[0, 20000, 40000, 60000]} // Only 4 ticks = 3 grid lines
-                      tickFormatter={(value) => value.toString()}
-                      domain={[0, 'dataMax']}
-                      tick={{ fontSize: 15 }}
-                    />
-                    <Tooltip />
-                    <Legend 
-                      wrapperStyle={{ paddingTop: 15 }} 
-                      formatter={(value, entry, index) => {
-                        return <span style={{fontSize: 14, color: '#000000' }}>{value}</span>;
-                      }}
-                    />
-                    {availableYears.map((year, index) => {
-                      // Kleurenpalet voor de jaren
-                      const colors = ['#4d4d4d', '#a3a0a0', '#ff6653', '#372462', '#00a651', '#0066cc'];
-                      return (
-                        <Bar 
-                          key={year}
-                          dataKey={year} 
-                          fill={colors[index % colors.length]} 
-                          name={year} 
-                        />
-                      );
-                    })}
-                  </BarChart>
-                </ResponsiveContainer>
+                <div style={{ width: '100%', height: '220px' }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart 
+                      data={electricityData} 
+                      margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+                      barGap={2}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                      <XAxis 
+                        dataKey="month" 
+                        tick={{ fontSize: 15 }}
+                        height={40}
+                      />
+                      <YAxis 
+                        axisLine={false}
+                        tickLine={false}
+                        ticks={[0, 20000, 40000, 60000]} // Only 4 ticks = 3 grid lines
+                        tickFormatter={(value) => value.toString()}
+                        domain={[0, 'dataMax']}
+                        tick={{ fontSize: 15 }}
+                      />
+                      <Tooltip />
+                      <Legend 
+                        wrapperStyle={{ paddingTop: 15 }} 
+                        formatter={(value, entry, index) => {
+                          return <span style={{fontSize: 14, color: '#000000' }}>{value}</span>;
+                        }}
+                      />
+                      {availableYears.map((year, index) => {
+                        // Kleurenpalet voor de jaren
+                        const colors = ['#4d4d4d', '#a3a0a0', '#ff6653', '#372462', '#00a651', '#0066cc'];
+                        return (
+                          <Bar 
+                            key={year}
+                            dataKey={year} 
+                            fill={colors[index % colors.length]} 
+                            name={year} 
+                          />
+                        );
+                      })}
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
               </div>
               
               {/* Gas usage cards */}
-              <div className="grid grid-cols-4 gap-4 mb-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 {availableYears.map((year, index) => (
                   <div key={year} className="bg-white rounded-lg shadow p-4 text-center">
                     <div className="text-sm text-gray-600">Gas {year}</div>
@@ -526,47 +596,49 @@ const EnergyDashboard: React.FC = () => {
                   <div className="text-red-500">Geen jaartallen gedetecteerd in de data</div>
                 )}
                 
-                <ResponsiveContainer width="100%" height={220}>
-                  <BarChart 
-                    data={gasData} 
-                    margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
-                    barGap={2}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                    <XAxis 
-                      dataKey="month" 
-                      tick={{ fontSize: 15 }}
-                      height={40}
-                    />
-                    <YAxis 
-                      axisLine={false}
-                      tickLine={false}
-                      ticks={[0, 5000, 10000, 15000]} // Only 4 ticks = 3 grid lines
-                      tickFormatter={(value) => value.toString()}
-                      domain={[0, 'dataMax']}
-                      tick={{ fontSize: 15 }}
-                    />
-                    <Tooltip />
-                    <Legend 
-                      wrapperStyle={{ paddingTop: 15 }} 
-                      formatter={(value, entry, index) => {
-                        return <span style={{fontSize: 14, color: '#000000' }}>{value}</span>;
-                      }}
-                    />
-                    {availableYears.map((year, index) => {
-                      // Kleurenpalet voor de jaren
-                      const colors = ['#4d4d4d', '#a3a0a0', '#ff6653', '#372462', '#00a651', '#0066cc'];
-                      return (
-                        <Bar 
-                          key={year}
-                          dataKey={year} 
-                          fill={colors[index % colors.length]} 
-                          name={year} 
-                        />
-                      );
-                    })}
-                  </BarChart>
-                </ResponsiveContainer>
+                <div style={{ width: '100%', height: '220px' }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart 
+                      data={gasData} 
+                      margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+                      barGap={2}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                      <XAxis 
+                        dataKey="month" 
+                        tick={{ fontSize: 15 }}
+                        height={40}
+                      />
+                      <YAxis 
+                        axisLine={false}
+                        tickLine={false}
+                        ticks={[0, 5000, 10000, 15000]} // Only 4 ticks = 3 grid lines
+                        tickFormatter={(value) => value.toString()}
+                        domain={[0, 'dataMax']}
+                        tick={{ fontSize: 15 }}
+                      />
+                      <Tooltip />
+                      <Legend 
+                        wrapperStyle={{ paddingTop: 15 }} 
+                        formatter={(value, entry, index) => {
+                          return <span style={{fontSize: 14, color: '#000000' }}>{value}</span>;
+                        }}
+                      />
+                      {availableYears.map((year, index) => {
+                        // Kleurenpalet voor de jaren
+                        const colors = ['#4d4d4d', '#a3a0a0', '#ff6653', '#372462', '#00a651', '#0066cc'];
+                        return (
+                          <Bar 
+                            key={year}
+                            dataKey={year} 
+                            fill={colors[index % colors.length]} 
+                            name={year} 
+                          />
+                        );
+                      })}
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
               </div>
             </div>
           </div>
